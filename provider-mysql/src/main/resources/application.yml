@@ -1,0 +1,44 @@
+#################################### common config : ####################################
+spring:
+  application:
+    name: provider-mysql
+  datasource:
+    #PostgreSQL配置
+    url: jdbc:mysql://127.0.0.1:3306/test
+    username: root
+    password: 12345678
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #druid连接池配置
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 初始化时建立物理连接的个数。初始化发生在显示调用init方法，或者第一次getConnection时
+    initialSize: 5
+    minIdle: 5
+    # 最大连接池数量
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: stat,wall
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.psq.providermysql.pojo
+
+server:
+  port: 8082
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8080/eureka
+  instance:
+    prefer-ip-address: true
+
+
