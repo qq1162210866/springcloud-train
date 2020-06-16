@@ -31,8 +31,8 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("SpringCloud API")
-                .description("This is a restful api document of SpringCloud.")
+                .title("Eureka Client API")
+                .description("This is a restful api document of Eureka Client.")
                 .version("1.0")
                 .build();
     }

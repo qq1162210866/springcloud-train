@@ -31,8 +31,8 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("SpringCloud API")
-                .description("This is a restful api document of SpringCloud.")
+                .title("Provider Mysql API ")
+                .description("This is a restful api document of Provider Mysql.")
                 .version("1.0")
                 .build();
     }
