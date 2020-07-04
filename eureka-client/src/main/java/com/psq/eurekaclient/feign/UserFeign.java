@@ -1,5 +1,6 @@
 package com.psq.eurekaclient.feign;
 
+import com.psq.eurekaclient.hystrix.UserHystrix;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,7 +14,7 @@ import java.util.List;
  * @author Peng Shiquan
  * @date 2020/6/16
  */
-@FeignClient(name = "provider-mysql")
+@FeignClient(name = "provider-mysql", fallback = UserHystrix.class)
 public interface UserFeign {
 
     /**

@@ -4,10 +4,18 @@ spring:
     name: eureka-client
 server:
   port: 8081
+#eureka注册中心的配置
 eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:8080/eureka
   instance:
     prefer-ip-address: true
-
+#日志的级别
+logging:
+  level:
+    com.psq.eurekaclient.feign.UserFeign: debug
+#feign默认不开启Hystrix，需要配置开启
+feign:
+  hystrix:
+    enabled: true
