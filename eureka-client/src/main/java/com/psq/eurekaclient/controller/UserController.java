@@ -33,6 +33,12 @@ public class UserController {
         String result = userFeign.selectUserByID(ids);
         return result;
     }
+    @GetMapping(value = "test")
+    @ApiOperation(value = "查询用户接口")
+    public String selectUserByID1() {
+
+        return "hello";
+    }
 
 
 }

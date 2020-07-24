@@ -6,6 +6,9 @@
     <modules>
         <module>eureka-server</module>
         <module>eureka-client</module>
+        <module>provider-mysql</module>
+        <module>eureka-client</module>
+        <module>gateway</module>
     </modules>
 
     <parent>
